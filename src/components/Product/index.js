@@ -7,8 +7,11 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import React, { useState } from "react";
 import { Container, Circle, Image, Info, Icon } from "./ProductStyles";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function Product({ item, id, address }) {
+	let navigate = useNavigate();
+
 	const getWalletData = item_id => {
 		toast.success(`ItemId: ${item_id}, Address: ${address}`);
 	};
@@ -17,8 +20,12 @@ function Product({ item, id, address }) {
 		<Container>
 			<Circle />
 			<Image src={item.img} />
-			<Info>
-				<Icon
+			<Info
+				onClick={() => {
+					navigate(`/ProductInfoPage`, { state: { item: item } });
+				}}
+			>
+				{/*<Icon
 					onClick={() => {
 						getWalletData(item.id);
 					}}
@@ -34,7 +41,7 @@ function Product({ item, id, address }) {
 				</Icon>
 				<Icon>
 					<FavoriteBorderOutlined />
-				</Icon>
+				</Icon>*/}
 			</Info>
 		</Container>
 	);
