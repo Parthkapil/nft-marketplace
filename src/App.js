@@ -7,6 +7,7 @@ import Home from "./pages";
 import ProductPage from "./pages/productPage";
 import { Provider } from "./context";
 import ProductInfoPage from "./pages/productInfoPage";
+import ThankyouPage from "./pages/thankyouPage";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/productPage" element={<ProductPage />} />
 					<Route path="/productInfoPage" element={<ProductInfoPage />} />
+					<Route path="/thankyouPage" element={<ThankyouPage />} />
 				</Routes>
 			</Router>
 		</Provider>

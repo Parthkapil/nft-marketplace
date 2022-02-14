@@ -38,7 +38,9 @@ function ProductInfo() {
 	};
 
 	const orderSuccess = () => {
-		toast.success("Order Successful!! Please check your Email for Confirmation.");
+		navigate(`/thankyouPage`);
+
+		// toast.success("Order Successful!! Please check your Email for Confirmation.");
 	};
 
 	return (
